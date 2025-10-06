@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rasha Mohamed Rilwan — Creativity</title>
+
+  <!-- same assets you use on index -->
+  <link rel="stylesheet" href="style.css">
+  <script src="https://kit.fontawesome.com/311007bc31.js" crossorigin="anonymous"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Poppins:wght@400;500;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <!-- simple top bar -->
+  <header class="creativity-header">
+    <div class="container creativity-bar">
+      <a href="index.html#creativity-preview" class="creativity-back">
+        <i class="fa-solid fa-arrow-left"></i> Back to portfolio
+      </a>
+      <h1 class="sub-title">My Drawings & Paintings</h1>
+    </div>
+  </header>
+
+  <main id="creativity" class="creativity-page">
+    <div class="container">
+      <p class="creativity-lead">
+        A curated collection of my traditional and digital works. Click any image to view larger.
+      </p>
+
+      <!-- ===== Gallery grid ===== -->
+      <div class="art-gallery">
+        <!-- Use large images; thumbs are optional -->
+        <a href="images/creativity/dad.png"><img src="images/creativity/dad.png" alt="Dad and child"></a>
+        <a href="images/creativity/heart.png"><img src="images/creativity/heart.png" alt="heart"></a>
+        <a href="images/creativity/butterfly.JPG"><img src="images/creativity/butterfly.JPG" alt="butterfly"></a>
+        <a href="images/creativity/love.png"><img src="images/creativity/love.png" alt="sun and moon love"></a>
+        <a href="images/creativity/makkah.png"><img src="images/creativity/makkah.png" alt="Makkah"></a>
+        <a href="images/creativity/star.JPG"><img src="images/creativity/star.JPG" alt="star"></a>
+        <a href="images/creativity/moon.png"><img src="images/creativity/moon.png" alt="Night moon"></a>
+        <a href="images/creativity/swing.JPG"><img src="images/creativity/swing.JPG" alt="swinging"></a>
+        <a href="images/creativity/purple.png"><img src="images/creativity/purple.png" alt="Purplish Night view"></a>
+        <a href="images/creativity/rain.png"><img src="images/creativity/rain.png" alt="Rain painting"></a>
+        <a href="images/creativity/treehouse.JPG"><img src="images/creativity/treehouse.JPG" alt="tree house"></a>
+        <a href="images/creativity/road.png"><img src="images/creativity/road.png" alt="Road trip"></a>
+        <a href="images/creativity/lady.JPG"><img src="images/creativity/lady.JPG" alt="lady"></a>
+        <a href="images/creativity/srilanka.png"><img src="images/creativity/srilanka.png" alt="Sri Lankan memories"></a>
+        <a href="images/creativity/sunset.png"><img src="images/creativity/sunset.png" alt="Sunset"></a>
+        <a href="images/creativity/blooming.JPG"><img src="images/creativity/blooming.JPG" alt="blooming flower"></a>
+        <a href="images/creativity/village.png"><img src="images/creativity/village.png" alt="Mountain village view"></a>
+        <a href="images/creativity/arabic.png"><img src="images/creativity/arabic.png" alt="Arabi calligraphy"></a>
+        <a href="images/creativity/ball.jpg"><img src="images/creativity/ball.jpg" alt="ball scenery"></a>
+      </div>
+    </div>
+  </main>
+
+  <!-- Lightbox (reuses your modal styling philosophy) -->
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <button class="lightbox__close" aria-label="Close">×</button>
+    <img class="lightbox__img" src="" alt="">
+  </div>
+
+  <script>
+    // Simple lightbox
+    const lb = document.getElementById('lightbox');
+    const lbImg = lb.querySelector('.lightbox__img');
+
+    document.querySelectorAll('.art-gallery a').forEach(a => {
+      a.addEventListener('click', e => {
+        e.preventDefault();
+        lbImg.src = a.getAttribute('href');
+        lb.classList.add('show');
+        lb.setAttribute('aria-hidden', 'false');
+      });
+    });
+
+    lb.addEventListener('click', e => {
+      if (e.target === lb || e.target.classList.contains('lightbox__close')) {
+        lb.classList.remove('show');
+        lb.setAttribute('aria-hidden', 'true');
+        lbImg.src = '';
+      }
+    });
+
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape' && lb.classList.contains('show')) {
+        lb.classList.remove('show');
+        lb.setAttribute('aria-hidden', 'true');
+        lbImg.src = '';
+      }
+    });
+  </script>
+</body>
+</html>
