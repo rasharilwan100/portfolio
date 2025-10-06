@@ -1,3 +1,5 @@
+<!-- PortfolioWebsite/index.html -->
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,6 +9,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" >
     <title>Rasha Mohamed Rilwan - Portfolio</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/311007bc31.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Poppins:wght@400;500;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 
 
@@ -14,15 +21,31 @@
 <div id="header">
     <div class="container">
         <nav>
-            <img src="images/logo.png" class="logo">
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Projects</a></li>
-                <li><a href="#">Contact</a></li>
+            <a href="#header">
+                <img src="images/logo.png" class="logo" alt="Rasha logo">
+            </a>
+
+            <ul id="sidemenu" role="menu" aria-label="Main navigation">
+                <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#certificates">Certificates</a></li>
+                <li><a href="#creativity-preview">Creativity</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li>
+                <button class="nav-close" id="nav-close" aria-label="Close menu">
+                    <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+                </button>
+                </li>
             </ul>
+
+            <button class="nav-toggle" id="nav-toggle" aria-label="Open menu">
+                <i class="fa-solid fa-bars" aria-hidden="true"></i>
+            </button>
         </nav>
-        <img src="images/background.svg" class="background">
+        <div class="nav-overlay" id="nav-overlay"></div>
+        <img src="images/background.svg" class="background" alt="" role="presentation">
+        
         <div class="header-text">
             <p>Frontend Developer, UX/UI Designer</p>
             <h1>Hi, I'm <span>Rasha</span> | <br>A Computer Science Student</h1>
@@ -30,12 +53,12 @@
     </div>
 </div>
 
-<!-------About------------>>
+<!-------About------------>
 <div id="about">
     <div class="container">
         <div class="row">
             <div class="about-col-1">
-                <img src="images/about.jpg">
+                <img src="images/rasha.png" alt="Rasha in the office" />
             </div>
             <div class="about-col-2">
                 <h1 class="sub-title">About Me</h1>
@@ -48,62 +71,441 @@
                 </p>
                 
                 <div class="tab-titles">
-                    <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
-                    <p class="tab-links" onclick="opentab('experience')">Experience</p>
-                    <p class="tab-links" onclick="opentab('education')">Education</p>
+                    <p class="tab-links" data-tab="profile">Profile</p>
+                    <p class="tab-links active-link" data-tab="skills">Skills</p>
+                    <p class="tab-links" data-tab="education">Education</p>
+
+                </div>
+                <div class="tab-contents" id="profile">
+                    <ul>
+                        <li><span>Nationality</span><br>Sri Lankan</li>
+                        <li><span>Born & Raised</span><br>Saudi Arabia</li>
+                        <li><span>Languages</span><br>Tamil (native), English (fluent)</li>
+                    </ul>
                 </div>
 
                 <div class="tab-contents active-tab" id="skills">
                     <ul>
-                        <li><span>UI/UX</span><br>Designing Web/App interfaces</li>
-                        <li><span>UI/UX</span><br>Designing Web/App interfaces</li>
-                        <li><span>UI/UX</span><br>Designing Web/App interfaces</li>
-                    </ul>
-                </div>
-                <div class="tab-contents" id="experience">
-                    <ul>
-                        <li><span>2025</span><br>Build Portfolio</li>
-                        <li><span>2022-2023</span><br>Early Childhood Educator</li>
-                        <li><span>2021</span><br>Certificate Design</li>
+                        <li><span>Programming languages</span><br>Java, C, C++, Python, Julia, HTML, XML, SQL.</li>
+                        <li><span>Frameworks</span><br>Unified Modelling Language (UML).</li>
+                        <li><span>Tools</span><br> Adobe Illustrator CC, Visual Paradigm, Canva, Microsoft Access, Microsoft Presentation.</li>
+                        <li><span>Soft Skills</span><br>Teamwork, Time Management, Problem Solving, Organization</li>
+
                     </ul>
                 </div>
                 <div class="tab-contents" id="education">
                     <ul>
-                        <li><span>2023-Current</span><br>Infrastructure University Kaula Lumpur (IUKL)</li>
-                        <li><span>2021-2023</span><br>University of the People</li>
-                        <li><span>2018-2020</span><br>Al-Majd International School</li>
+                        <li>
+                        <span>2023-Current</span><br>
+                        <strong>KAULA LUMPUR UNIVERSITY OF SCIENCE AND TECHNOLOGY</strong><br>
+                        <span class="degree">Bachelors Degree Of Science in Computer Science (High Honors)</span>
+                        </li>
+                        <li>
+                        <span>2021-2023</span><br>
+                        <strong>UNIVERSITY OF THE PEOPLE</strong><br>
+                        <span class="degree">Associate Degree Of Science in Computer Science (High Honors)</span>
+                        </li>
+                        <li>
+                        <span>2018-2020</span><br>
+                        <strong>AL-MAJD INTERNATIONAL SCHOOL DAMMAM, SAUDI ARABIA</strong>
+                        </li>
                     </ul>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- experience -->
+<div id="experience">
+    <div class="container">
+        <h1 class="sub-title">My Experience</h1>
+        <div class="work-list">
+            <div class="work">
+                <img src="images/work-fam.png">
+                <div class="layer">
+                    <h3>UI/UX DESIGNER (3-MONTH INTERNSHIP)</h3>
+                    <p>Awesomeree Sdn Bhd (March - July 2025)</p>
+                    <p>Designed and coded responsive web interfaces, improving user experience and visual consistency across company apps.</p>
+                </div>
+            </div>
+            <div class="work">
+                <img src="images/certificate.png">
+                <div class="layer">
+                    <h3>VOLUNTEER WORK - CERTIFICATE CREATOR</h3>
+                    <p>Sri Lankan International School Dammam Sports Day Event (2020)</p>
+                    <p>Created 100+ event certificates with professional designs, ensuring accuracy and timely delivery for the school’s sports day.</p>
+                </div>
+            </div>
+            <div class="work">
+                <img src="images/school-students.jpg">
+                <div class="layer">
+                    <h3>EARLY CHILDHOOD EDUCATOR</h3>
+                    <p>Rising Stars Pre-School and Learning Center (2022 - 2023)</p>
+                    <p>Delivered creative lessons for children aged 3–7, boosting classroom engagement and participation by over 70%.</p>
                 </div>
             </div>
         </div>
     </div>
 </div>
 
-<!-------projects------------>>
+<!-------projects------------>
 <div id="projects">
-    <div class="container">
-        <h1 class="sub-title">My Projects</h1>
+  <div class="container">
+    <h1 class="sub-title">My Projects</h1>
+
+    <div class="projects-list">
+
+      <!-- 2 RoarCommerce -->
+        <div class="project-card"
+                data-title="RoarCommerce – E-Commerce Platform (In Development)"
+                data-desc="Currently developing an e-commerce platform for Janamuda with focus on clean layout and content consistency. Created and refined copy for all site pages, including homepage and policy sections. Assisted with layout adjustments such as padding, typography standardization, and header visibility to ensure responsive and readable design across devices."
+                data-stack="HTML, CSS, JavaScript, Content Writing, UI Layout Design"
+                data-link="#"
+                data-img="images/roar1.png,images/roar2.png">
+            <i class="fa-solid fa-bag-shopping"></i>
+            <h2>RoarCommerce</h2>
+            <p>Ongoing e-commerce website for Janamuda.</p>
+            <a href="#" class="learn-more">Learn more</a>
+        </div>
+
+
+      <!-- 3 Awesomeree -->
+      <div class="project-card"
+            data-title="Awesomeree – SEO Optimization Assignment"
+            data-desc="Completed a 3-day SEO optimization task for Awesomeree’s official website. Conducted a full RankMath audit, enhanced keywords, revised meta descriptions and page titles, and added missing alt text for images. Improved overall site SEO score to 94/100, demonstrating how small refinements significantly boost visibility and ranking performance."
+            data-stack="RankMath SEO, WordPress, Keyword Research, Meta Optimization, Image Alt Text"
+            data-link="#"
+            data-img="images/awesomeree1.png">
+        <i class="fa-solid fa-palette"></i>
+        <h2>Awesomeree</h2>
+        <p>Short-term SEO optimization for company site.</p>
+        <a href="#" class="learn-more">Learn more</a>
+      </div>
+
+      <!-- 4 Barndo Guru -->
+      <div class="project-card"
+            data-title="Barndo Guru – Barndominium Resource Website"
+            data-desc="Built a U.S.-focused informational website about barndominiums using WordPress and Kadence blocks. Designed full site layout, authored long-form guides, and optimized all content to achieve 90+ RankMath SEO scores through strategic keywording, meta descriptions, and internal linking. Ensured information-image consistency to meet Google content quality standards and maintain reader trust."
+            data-stack="WordPress (Kadence Theme), RankMath SEO, Content Writing, SEO Copyediting, Information Architecture"
+            data-link="#"
+            data-img="images/barn1.png,images/barn2.png">
+        <i class="fa-solid fa-house"></i>
+        <h2>Barndo Guru</h2>
+        <p>Informational barndominium website with SEO-optimized guides.</p>
+        <a href="#" class="learn-more">Learn more</a>
+      </div>
+
+      <!-- 5 My Recipe You Cook -->
+      <div class="project-card"
+            data-title="My Recipe You Cook – WordPress Recipe Website"
+            data-desc="Developed and managed a U.S.-based recipe website using WordPress under the Kadence theme. Researched, wrote, and published 20+ original recipes with custom hero visuals created in Midjourney. Optimized each post to achieve 90+ RankMath SEO scores, implemented structured data (JSON-LD) for recipe metadata, and fixed layout and responsiveness issues site-wide. Improved global SEO to 100, conducted link audits, and managed indexing through Google Search Console while maintaining active engagement via Instagram, Facebook, and Pinterest."
+            data-stack="WordPress (Kadence Theme), RankMath SEO, JSON-LD, Midjourney, Google Search Console, Social Media Integration"
+            data-link="#"
+            data-img="images/mryc1.png,images/mryc2.png,images/mryc3.png">
+        <i class="fa-solid fa-bowl-food"></i>
+        <h2>My Recipe You Cook</h2>
+        <p>WordPress recipe website with SEO optimization.</p>
+        <a href="#" class="learn-more">Learn more</a>
+      </div>
+
+      <!-- 6 WebApp -->
+      <div class="project-card"
+            data-title="WebApp – Janamuda Control Panel"
+            data-desc="Developed and maintained a large-scale internal control panel used by the Janamuda team. Led the front-end redesign to modernize the interface using Tailwind CSS and implemented over ten pages including Dashboard, Orders, Inventory, Analytics, and Settings. Managed deployment to Google Cloud (Firebase Hosting) and handled debugging, authentication setup, and role-based access control. Collaborated with multiple departments to collect feedback, assign feature tasks, and ensure the app met operational requirements."
+            data-stack="Python (Flask backend), Tailwind CSS, HTML, Firebase Hosting, Google Cloud, Vercel V0"
+            data-link="#"
+            data-img="images/webapp1.png, images/webapp2.png, images/webapp3.png">
+            <i class="fa-solid fa-window-restore"></i>
+            <h2>WebApp</h2>
+            <p>Internal control panel for Janamuda team.</p>
+            <a href="#" class="learn-more">Learn more</a>
+      </div>
+
+      <!-- 7 WorkAhead (old) -->
+      <div class="project-card"
+            data-title="WorkAhead App – Job-Seeking Assistant (Early Project)"
+            data-desc="An early concept for a job-seeking assistant app designed to enhance job search efficiency. Created structured UI and UX flows using Visual Paradigm and Figma, including wireframes, user journeys, and interface layouts. This project marked my first experience in building a complete design system from concept to interactive mockups."
+            data-stack="Figma, Visual Paradigm, UX Design, Wireframing, Prototyping"
+            data-link="#"
+            data-img="images/wa1.png,images/wa2.png,images/wa3.png">
+        <i class="fa-solid fa-briefcase"></i>
+        <h2>WorkAhead App</h2>
+        <p>Early job-seeking assistant concept.</p>
+        <a href="#" class="learn-more">Learn more</a>
+      </div>
+
+      <!-- 1 SaveRasa (recent) -->
+      <div class="project-card"
+           data-title="SaveRasa Mobile App – IT Project"
+           data-desc="A mobile app concept to reduce food waste using smart reminders and dynamic pricing."
+           data-stack="Figma, React Native (prototype), JS"
+           data-link="#"
+           data-img="images/projects/saverasa.jpg">
+        <i class="fa-solid fa-mobile-screen-button"></i>
+        <h2>SaveRasa Mobile App</h2>
+        <p>Food waste reduction app (final year project).</p>
+        <a href="#" class="learn-more">Learn more</a>
+      </div>
+
     </div>
+  </div>
+</div>
+
+<!-- Reusable modal (popup) -->
+<div class="modal" id="project-modal" aria-hidden="true" role="dialog" aria-modal="true">
+  <div class="modal__panel" role="document">
+    <button class="modal__close" aria-label="Close">×</button>
+    <!-- 🔄 Carousel Section -->
+    <div class="modal__carousel">
+        <button class="modal__nav modal__prev" aria-label="Previous">‹</button>
+        <div class="modal__track"></div>
+        <button class="modal__nav modal__next" aria-label="Next">›</button>
+    </div>
+    <h3 class="modal__title"></h3>
+    <p class="modal__desc"></p>
+    <p class="modal__stack"></p>
+    <a class="modal__link" href="#" target="_blank" rel="noopener">View project ↗</a>
+  </div>
 </div>
 
 
+<!-------certificates------------>
+<div id="certificates">
+    <div class="container">
+        <h1 class="sub-title">My Certificates</h1>
+        <div class="work-list">
+            <div class="work">
+                <img src="images/certificates/cert1.png">
+                <div class="layer">
+                    <h3>CCNAv7: Introduction to Networks — Cisco Networking Academy</h3>
+                </div>
+            </div>
+            <div class="work">
+                <img src="images/certificates/cert2.png">
+                <div class="layer">
+                    <h3>Introduction to Julia (for Programmers) — JuliaAcademy</h3>
+                </div>
+            </div>
+            <div class="work">
+                <img src="images/certificates/cert3.png">
+                <div class="layer">
+                    <h3>Certificate of Appreciation — IUKL Cyber Club</h3>
+                </div>
+            </div>
+            <div class="work">
+                <img src="images/certificates/cert4.png">
+                <div class="layer">
+                    <h3>Introduction to Information Security — Great Learning</h3>
+                </div>
+            </div>
+            <div class="work">
+                <img src="images/certificates/cert5.png">
+                <div class="layer">
+                    <h3>Computational Modeling in Julia — JuliaAcademy</h3>
+                </div>
+            </div>
+            <div class="work">
+                <img src="images/certificates/cert6.png">
+                <div class="layer">
+                    <h3>Diploma in CISSP (2019) — Alison</h3>
+                </div>
+            </div>
+            <div class="work">
+                <img src="images/certificates/cert7.png">
+                <div class="layer">
+                    <h3>I-(PRO)TAS 2024 — Certificate of Participation (Scam as Federal Crime)</h3>
+                </div>
+            </div>
+            <div class="work">
+                <img src="images/certificates/cert8.png">
+                <div class="layer">
+                    <h3>I-(PRO)TAS 2024 — Certificate of Participation (Cybersecurity)</h3>
+                </div>
+            </div>
+            <div class="work">
+                <img src="images/certificates/cert9.png">
+                <div class="layer">
+                    <h3>I-(PRO)TAS 2024 — Certificate of Participation (AI in Action)</h3>
+                </div>
+            </div>
+            <div class="work">
+                <img src="images/certificates/cert10.png">
+                <div class="layer">
+                    <h3>Digital Putrajaya Exhibition & Conference (DiPEC 2024)</h3>
+                </div>
+            </div>
+        </div>
+        <!-- <a href="#" class="btn">See more........</a> -->
+    </div>
+</div>
 
+<!-- Creativity -->
+<div id="creativity-preview">
+  <div class="container">
+    <h1 class="sub-title">My Creativity</h1>
+    <p class="creativity-lead">
+      A small peek at my drawings and paintings. I love experimenting with color, composition, and storytelling outside of code.
+    </p>
+
+    <div class="preview-gallery">
+      <!-- Use any 3 thumbnails you like -->
+      <img src="images/creativity/arabic.png" alt="arabic calligraphy">
+      <img src="images/creativity/village.png" alt="Mountain scenery">
+      <img src="images/creativity/moon.png" alt="Night Moon">
+    </div>
+
+    <a href="creativity.html" class="btn">See more...</a>
+  </div>
+</div>
+
+<!-------contact------------>
+<div id="contact" class="footer-section">
+  <div class="container">
+    <div class="row">
+      <div class="contact-left">
+        <h1 class="sub-title">Contact Me</h1>
+        <p><i class="fa-solid fa-envelope"></i>rasharilwan100@gmail.com</p>
+        <p><i class="fa-solid fa-phone"></i>+60 1120753421</p>
+        <div class="social-icons">
+            <a href="http://linkedin.com/in/rasha-rilwan" target="_blank" rel="noopener noreferrer">
+                <i class="fa-brands fa-linkedin"></i>
+                <span>LinkedIn</span>
+            </a>
+        </div>
+        <a href="images/Rasha_CV (1).pdf" download class="btn btn2">Download CV</a>
+      </div>
+    </div>
+  </div>
+  <div class="copyright">
+    <p>© 2025 Rasha. All rights reserved.</p>
+  </div>
+</div>
+
+
+<!-- javascript -->
+ <!-- for projects section pop up window -->
+<script>
+  const modal = document.getElementById('project-modal');
+  const track = modal.querySelector('.modal__track');
+  const prevBtn = modal.querySelector('.modal__prev');
+  const nextBtn = modal.querySelector('.modal__next');
+
+  function openModalFrom(card){
+    // Title/desc/stack as before
+    modal.querySelector('.modal__title').textContent = card.dataset.title || '';
+    modal.querySelector('.modal__desc').textContent  = card.dataset.desc || '';
+    modal.querySelector('.modal__stack').textContent = card.dataset.stack ? ('Stack: ' + card.dataset.stack) : '';
+
+    // Build carousel from data-img (comma-separated)
+    const imgs = (card.dataset.img || '').split(',').map(s => s.trim()).filter(Boolean);
+    track.innerHTML = imgs.map(src => `<img src="${src}" alt="${card.dataset.title || 'Project image'}">`).join('') || `<img src="" alt="">`;
+
+    // Slider state
+    let index = 0;
+    const go = i => {
+      index = Math.max(0, Math.min(i, imgs.length - 1));
+      track.style.transform = `translateX(-${index * 100}%)`;
+      prevBtn.style.display = (imgs.length > 1 && index > 0) ? 'block' : 'none';
+      nextBtn.style.display = (imgs.length > 1 && index < imgs.length - 1) ? 'block' : 'none';
+    };
+    go(0);
+    prevBtn.onclick = () => go(index - 1);
+    nextBtn.onclick = () => go(index + 1);
+
+    // View project link: show only if a real link is present
+    const linkEl = modal.querySelector('.modal__link');
+    const href = (card.dataset.link || '').trim();
+    if (!href || href === '#') { linkEl.style.display = 'none'; }
+    else { linkEl.style.display = 'inline-block'; linkEl.href = href; }
+
+    modal.classList.add('show');
+    modal.setAttribute('aria-hidden','false');
+  }
+
+  // Attach open handlers
+  document.querySelectorAll('.project-card .learn-more').forEach(btn => {
+    btn.addEventListener('click', e => {
+      e.preventDefault();
+      openModalFrom(e.currentTarget.closest('.project-card'));
+    });
+  });
+
+  // Close handlers (keep your existing)
+  modal.addEventListener('click', e => {
+    if (e.target === modal || e.target.classList.contains('modal__close')) {
+      modal.classList.remove('show'); modal.setAttribute('aria-hidden','true');
+    }
+  });
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') { modal.classList.remove('show'); modal.setAttribute('aria-hidden','true'); }
+  });
+</script>
+
+ <script>
+  const tablinks = document.getElementsByClassName("tab-links");
+  const tabcontents = document.getElementsByClassName("tab-contents");
+
+  function openTabById(id) {
+    Array.from(tablinks).forEach(l => l.classList.remove("active-link"));
+    Array.from(tabcontents).forEach(c => c.classList.remove("active-tab"));
+    document.querySelector(`.tab-links[data-tab="${id}"]`)?.classList.add("active-link");
+    document.getElementById(id)?.classList.add("active-tab");
+  }
+
+  // delegate clicks for tabs
+  document.addEventListener('click', (e) => {
+    const el = e.target.closest('.tab-links[data-tab]');
+    if (!el) return;
+    e.preventDefault();
+    openTabById(el.dataset.tab);
+  });
+</script>
 
 <script>
-    var tablinks = document.getElementsByClassName("tab-links")
-    var tabcontents = document.getElementsByClassName("tab-contents")
+  // reveal-on-scroll
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) e.target.classList.add('reveal--visible');
+    });
+  }, { threshold: 0.12 });
 
-    function opentab(tabname){
-        for(tablink of tablinks){
-            tablink.classList.remove("active-link")
-        }
-        for(tabcontent of tabcontents){
-            tabcontent.classList.remove("active-tab")
-        }
-        event.currentTarget.classList.add("active-link");
-        document.getElementById(tabname).classList.add("active-tab");
-    }
+  // what to reveal
+  document.querySelectorAll(
+    '#about, #experience, #projects, #certificates, #creativity-preview, ' +
+    '.work, .project-card, .preview-gallery img'
+  ).forEach(el => {
+    el.classList.add('reveal');
+    io.observe(el);
+  });
 </script>
+
+<script>
+  const sidemenu   = document.getElementById('sidemenu');
+  const openBtn    = document.getElementById('nav-toggle');
+  const closeBtn   = document.getElementById('nav-close');
+  const overlay    = document.getElementById('nav-overlay');
+
+  function openMenu(){
+    sidemenu.classList.add('open');
+    overlay.classList.add('show');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeMenu(){
+    sidemenu.classList.remove('open');
+    overlay.classList.remove('show');
+    document.body.style.overflow = '';
+  }
+
+  openBtn?.addEventListener('click', openMenu);
+  closeBtn?.addEventListener('click', closeMenu);
+  overlay?.addEventListener('click', closeMenu);
+
+  // close the drawer when a link is clicked
+  sidemenu.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+</script>
+
 
 </body>
 
