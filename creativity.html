@@ -75,6 +75,7 @@
         lbImg.src = a.getAttribute('href');
         lb.classList.add('show');
         lb.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
       });
     });
 
@@ -83,6 +84,7 @@
         lb.classList.remove('show');
         lb.setAttribute('aria-hidden', 'true');
         lbImg.src = '';
+        document.body.style.overflow = ''; 
       }
     });
 
